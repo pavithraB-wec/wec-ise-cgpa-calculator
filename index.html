@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ISE – CGPA / SGPA Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>ISE – CGPA / SGPA Calculator</h1>
+    <div class="controls">
+      <button id="darkToggle" aria-label="Toggle dark mode">🌙</button>
+      <button id="clearAll">Clear All</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Semester SGPA Calculator</h2>
+      <label for="semesterSelect">Select semester</label>
+      <select id="semesterSelect" onchange="loadSubjects()">
+        <option value="">-- Select --</option>
+        <option value="1">Semester 1</option>
+        <option value="2">Semester 2</option>
+        <option value="3">Semester 3</option>
+        <option value="4">Semester 4</option>
+        <option value="5">Semester 5</option>
+        <option value="6">Semester 6</option>
+        <option value="7">Semester 7</option>
+        <option value="8">Semester 8</option>
+      </select>
+
+      <div id="subjects-container" class="subjects"></div>
+
+      <div class="row">
+        <button class="btn" onclick="calculateSGPA()">Calculate SGPA</button>
+        <button class="btn outline" onclick="saveSemesterSGPA()">Save SGPA</button>
+      </div>
+      <div id="sgpa-result" class="result">SGPA: --</div>
+    </section>
+
+    <section class="card">
+      <h2>CGPA Calculator</h2>
+      <p class="muted">Enter SGPAs (you can fill any number of semesters). CGPA will be calculated from filled values.</p>
+      <div id="cgpa-inputs" class="grid-sgpa"></div>
+
+      <div class="row">
+        <button class="btn" onclick="calculateCGPA()">Calculate CGPA</button>
+        <button class="btn outline" onclick="downloadReport()">Download PDF</button>
+      </div>
+
+      <div class="options">
+        <label>Percentage conversion factor: <input id="percFactor" type="number" step="0.1" value="9.5" /></label>
+        <button class="btn small" onclick="convertToPercentage()">Convert CGPA → %</button>
+      </div>
+
+      <div id="cgpa-result" class="result">CGPA: --</div>
+      <div id="percent-result" class="result muted">Percentage: --</div>
+    </section>
+  </main>
+
+  <footer class="footer">Made by Pavithra B — ISE</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
