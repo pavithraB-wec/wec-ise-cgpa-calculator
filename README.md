@@ -3,6 +3,9 @@
 A fully responsive, mobile-friendly **CGPA & SGPA calculator** built for  
 **Information Science & Engineering (ISE)** students of **WEC – Puducherry**.
 
+# Live Demo
+[https://pavithrab-wec.github.io/wec-ise-cgpa-calculator/](https://pavithrab-wec.github.io/wec-ise-cgpa-calculator/)
+
 This tool helps students calculate:
 
 - Semester-wise **SGPA**
